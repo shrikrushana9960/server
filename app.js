@@ -17,7 +17,7 @@ app.use(bodyParser.json())
 app.use(logger("dev"));
 app.use(cookieParser())
 const corsOptions = {
-  origin:"*",
+  origin: ['http://localhost:3000',"https://client-j36g.onrender.com/"],
   credentials: true,
   optionsSuccessStatus: 200,
 };
@@ -50,4 +50,3 @@ app.use(
 app.listen(process.env.PORT, () => {
   console.log(`Example app listening on port ${process.env.PORT}`)
 })
-module.exports = app;
