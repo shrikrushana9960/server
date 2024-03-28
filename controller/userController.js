@@ -35,7 +35,7 @@ exports.signup = async (req, res, next) => {
           maxAge: 2 * 24 * 60 * 60 * 1000,
         })
         .status(200)
-        .json({ success: true, data });
+        .json({ success: true, data,token });
     }
   } catch (e) {
     console.log(e);
@@ -91,6 +91,7 @@ exports.signin = async (req, res, next) => {
           name: user.name,
           email: user.email,
         },
+        token
       });
   } catch (e) {
     console.log(e);
