@@ -22,7 +22,7 @@ const corsOptions = {
   optionsSuccessStatus: 200,
 };
 
-app.use(cors(corsOptions));
+app.use(cors());
 
 dbConnect();
 app.use("/api/v1/user", userRoute);
