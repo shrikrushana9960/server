@@ -16,13 +16,13 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 app.use(logger("dev"));
 app.use(cookieParser())
-const corsOptions = {
-  origin: ['http://localhost:3000',"https://client-j36g.onrender.com"],
+const corsConfig = {
+  origin: true,
   credentials: true,
-  optionsSuccessStatus: 200,
 };
 
-app.use(cors(corsOptions));
+app.use(cors(corsConfig));
+app.options('*', cors(corsConfig));
 
 dbConnect();
 app.use("/api/v1/user", userRoute);
